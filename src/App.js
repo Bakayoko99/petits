@@ -37,8 +37,9 @@ class App extends React.Component {
     const player = this.state.currentPlayer
 
     if (player === 1) {
-
+      console.log("player1 condition");
       if (this.state.numCase !== 0 || dee === 6) {
+        console.log("player1 dexieume condition");
         this.setState({
           numDee: dee,
           numCase: this.state.numCase + dee,
@@ -53,8 +54,11 @@ class App extends React.Component {
 
 
     } else if (player === 2) {
+      console.log("player2 condition");
 
       if (this.state.numCase2 !== 0 || dee === 6) {
+        console.log("player2 dexieume condition");
+
         this.setState({
           numDee2: dee,
           numCase2: this.state.numCase2 + dee,
@@ -118,7 +122,8 @@ class App extends React.Component {
   
     if (this.state.player1Tokens.indexOf(false) === -1 || this.state.player2Tokens.indexOf(false) === -1) {
       return <PlayersVictory player1Tokens = {this.state.player1Tokens} player2Tokens ={this.state.player2Tokens} />
-    }
+      /* componetent des jouer gagnant */
+    } 
     else {
 
       return (
@@ -140,27 +145,17 @@ class App extends React.Component {
                 <div className="flex grid-item-4">
                   {this.renderCircles(29, 36)}
                 </div>
-
+                
                 <div className="flex grid-item-5">
                
                   <PlayersContainer className1Div ="containerP1" className2div="divchildP1" playerTokens={this.state.player1Tokens} playerColor= "#4646e8"/>
-
+                  
                   <PlayersContainer className1Div ="containerP2" className2div="divchildP2" playerTokens={this.state.player2Tokens} playerColor= "#c30c0c"/>
 
                   <NumeroDee numDee={this.state.numDee} numDee2={this.state.numDee2} currentPlayer={this.state.currentPlayer} lancerDeeOnClick= {this.lancerDee}/>
-                  {/* <div className="numeroDee">
-
-
-                    <span className="spanP1">{this.state.numDee}</span>
-                    <i className="fas fa-chess-knight logo "></i>
-
-                    <span className="spanP2">{this.state.numDee2}</span>
-                    <p className="rainbow">Petit Chevaux</p>
-                    <button className={this.state.currentPlayer === 1 ? "b1" : "b2"} onClick={this.lancerDee}>Tirer dée du jouer {this.state.currentPlayer}</button>
-                  </div> */}
 
                 </div>
-
+                
                 <div className="flex grid-item-6">
                   {this.renderCircles(11, 18)}
                 </div>
@@ -183,7 +178,7 @@ class App extends React.Component {
 
   }
   render() {
-
+    // console.log("essaye function dee: ",this.lancerDee);
     return (
       <div>{this.renderVictory()}</div>
     )

@@ -3,6 +3,7 @@ import React from 'react';
 
 class NumeroDee extends React.Component {
     render() {
+        // console.log("esaye: ",this.props.lancerDeeOnClick);
         return (
             <div className="numeroDee">
 
