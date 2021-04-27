@@ -5,6 +5,7 @@ import Circle from "./components/Circle.jsx"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PlayersVictory from "./components/PlayersVictory";
 import PlayersContainer from "./components/PlayersContainer"
+import NumeroDee from "./components/NumeroDee";
 
 
 class App extends React.Component {
@@ -115,7 +116,7 @@ class App extends React.Component {
 
   renderVictory() {
   
-    if (this.state.player1Tokens.indexOf(false) === -1 && this.state.player2Tokens.indexOf(false) === -1) {
+    if (this.state.player1Tokens.indexOf(false) === -1 || this.state.player2Tokens.indexOf(false) === -1) {
       return <PlayersVictory player1Tokens = {this.state.player1Tokens} player2Tokens ={this.state.player2Tokens} />
     }
     else {
@@ -146,7 +147,8 @@ class App extends React.Component {
 
                   <PlayersContainer className1Div ="containerP2" className2div="divchildP2" playerTokens={this.state.player2Tokens} playerColor= "#c30c0c"/>
 
-                  <div className="numeroDee">
+                  <NumeroDee numDee={this.state.numDee} numDee2={this.state.numDee2} currentPlayer={this.state.currentPlayer} lancerDeeOnClick= {this.lancerDee}/>
+                  {/* <div className="numeroDee">
 
 
                     <span className="spanP1">{this.state.numDee}</span>
@@ -155,7 +157,7 @@ class App extends React.Component {
                     <span className="spanP2">{this.state.numDee2}</span>
                     <p className="rainbow">Petit Chevaux</p>
                     <button className={this.state.currentPlayer === 1 ? "b1" : "b2"} onClick={this.lancerDee}>Tirer dée du jouer {this.state.currentPlayer}</button>
-                  </div>
+                  </div> */}
 
                 </div>
 
