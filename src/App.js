@@ -4,6 +4,7 @@ import Circle from "./components/Circle.jsx"
 // import Winner from "./assets/pic/winner.gif"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PlayersVictory from "./components/PlayersVictory";
+import PlayersContainer from "./components/PlayersContainer"
 
 
 class App extends React.Component {
@@ -140,33 +141,10 @@ class App extends React.Component {
                 </div>
 
                 <div className="flex grid-item-5">
-                  <div className="containerP1">
-                    <div className="divchildP1">
-                      <div >
-                        <Circle circleColor={this.state.player1Tokens[0] ? "#4646e8" : "black"} />
-                        <Circle circleColor={this.state.player1Tokens[1] ? "#4646e8" : "black"} />
-                      </div>
+               
+                  <PlayersContainer className1Div ="containerP1" className2div="divchildP1" playerTokens={this.state.player1Tokens} playerColor= "#4646e8"/>
 
-                      <div >
-                        <Circle circleColor={this.state.player1Tokens[2] ? "#4646e8" : "black"} />
-                        <Circle circleColor={this.state.player1Tokens[3] ? "#4646e8" : "black"} />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="containerP2">
-                    <div className="divchildP2">
-                      <div >
-                        <Circle circleColor={this.state.player2Tokens[0] ? "#c30c0c" : "black"} />
-                        <Circle circleColor={this.state.player2Tokens[1] ? "#c30c0c" : "black"} />
-                      </div>
-
-                      <div >
-                        <Circle circleColor={this.state.player2Tokens[2] ? "#c30c0c" : "black"} />
-                        <Circle circleColor={this.state.player2Tokens[3] ? "#c30c0c" : "black"} />
-                      </div>
-                    </div>
-                  </div>
+                  <PlayersContainer className1Div ="containerP2" className2div="divchildP2" playerTokens={this.state.player2Tokens} playerColor= "#c30c0c"/>
 
                   <div className="numeroDee">
 
